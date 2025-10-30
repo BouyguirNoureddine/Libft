@@ -6,7 +6,7 @@
 /*   By: nbouygui <nbouygui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:16:14 by nbouygui          #+#    #+#             */
-/*   Updated: 2025/10/28 09:25:26 by nbouygui         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:16:00 by nbouygui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + ft_strlen(src));
 	len = ft_strlen(dst) + ft_strlen(src);
 	while (*dst && size)
+	{
 		dst++;
+		size--;
+	}
 	while (*src && size > 1)
 	{
 		*dst++ = *src++;

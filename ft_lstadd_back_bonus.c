@@ -6,7 +6,7 @@
 /*   By: nbouygui <nbouygui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 09:15:24 by nbouygui          #+#    #+#             */
-/*   Updated: 2025/10/28 09:58:27 by nbouygui         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:11:51 by nbouygui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!lst || !*lst || !new)
+	if (!lst || !new)
 		return ;
 	last = ft_lstlast(*lst);
+	if (!last)
+	{
+		*lst = new;
+		new->next = NULL;
+		return ;
+	}
 	last->next = new;
 	last->next->next = NULL;
 }

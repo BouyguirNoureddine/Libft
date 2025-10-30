@@ -6,7 +6,7 @@
 /*   By: nbouygui <nbouygui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:35:10 by nbouygui          #+#    #+#             */
-/*   Updated: 2025/10/22 12:55:14 by nbouygui         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:14:52 by nbouygui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1++;
 	len = ft_strlen(s1);
 	if (!len)
-		return (NULL);
+		return (ft_calloc(1, 1));
 	end = &s1[len];
 	while (ft_in(s1[--len], set))
 		end = &s1[len];
